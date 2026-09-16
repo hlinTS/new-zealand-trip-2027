@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f6f3">
+<title>新西兰旅行手册 V1.5｜2027.02.03–02.15</title>
+<style>
+:root{
+  --bg:#f4f6f3;--card:#fff;--ink:#18211d;--muted:#6d7771;--line:#e4e9e5;
+  --green:#315f50;--green2:#e8f1ed;--amber:#a86d20;--amber2:#fff3df;
+  --blue:#3d6477;--blue2:#eaf2f6;--red:#a54b45;--red2:#faecea;--shadow:0 6px 22px rgba(35,55,45,.07);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{
+ margin:0;background:var(--bg);color:var(--ink);
+ font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+ -webkit-font-smoothing:antialiased;
+}
+button,input{font:inherit}a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:auto;padding:0 14px 48px}
+.hero{
+ margin:0 -14px 14px;padding:calc(20px + env(safe-area-inset-top)) 22px 24px;
+ background:linear-gradient(145deg,#244b40,#3e7563);color:white;border-radius:0 0 28px 28px;
+}
+.kicker{font-size:12px;letter-spacing:.13em;opacity:.72;font-weight:700}
+.hero h1{font-size:27px;margin:8px 0 5px}.hero p{margin:0;opacity:.84;font-size:14px}
+.hero .route{margin-top:17px;font-size:13px;line-height:1.65;opacity:.95}
+.section{margin:15px 0}.section-title{font-size:18px;font-weight:800;margin:0 3px 9px;display:flex;justify-content:space-between;align-items:end}
+.section-title small{font-size:11px;color:var(--muted);font-weight:500}
+.card,details{
+ background:var(--card);border:1px solid rgba(30,55,45,.055);border-radius:18px;box-shadow:var(--shadow);
+}
+.card{padding:15px}
+details{margin:9px 0;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:15px;font-weight:760;display:flex;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"⌄";margin-left:auto;color:#83908a;font-size:20px;transition:.2s}
+details[open]>summary:after{transform:rotate(180deg)}
+.details-body{padding:0 15px 15px;border-top:1px solid var(--line)}
+.focus{background:linear-gradient(145deg,#fff,#f9fbfa)}
+.focus-item{padding:11px 0;border-bottom:1px solid var(--line)}
+.focus-item:last-child{border:0}.focus-item b{display:block;margin-bottom:3px}
+.sub{font-size:12px;color:var(--muted);line-height:1.55}.empty{color:var(--muted);font-size:13px}
+.pill{display:inline-block;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:700;margin:2px 4px 2px 0}
+.p-confirm{background:var(--green2);color:var(--green)}.p-want{background:var(--amber2);color:var(--amber)}
+.p-opt{background:#f0f1f0;color:#6e7772}.p-split{background:var(--blue2);color:var(--blue)}.p-book{background:var(--red2);color:var(--red)}
+.day-head{display:flex;align-items:center;gap:11px}
+.datebox{min-width:52px;text-align:center;border-radius:13px;background:var(--green2);padding:6px}
+.datebox b{font-size:18px;display:block}.datebox span{font-size:10px;color:var(--green)}
+.dayname{font-size:15px}.dayroute{font-size:11px;color:var(--muted);margin-top:2px;font-weight:500}
+.timeline{margin:11px 0 0;padding:0;list-style:none}
+.timeline li{position:relative;padding:0 0 13px 19px;line-height:1.5;font-size:13px}
+.timeline li:before{content:"";position:absolute;left:2px;top:7px;width:7px;height:7px;border-radius:50%;background:#709183}
+.timeline li:not(:last-child):after{content:"";position:absolute;left:5px;top:16px;bottom:2px;width:1px;background:#dce4df}
+.time{font-weight:800;margin-right:5px}.note{margin-top:6px;padding:9px 10px;border-radius:11px;background:#f7f8f7;font-size:12px;color:#59645f;line-height:1.55}
+.warn{background:var(--amber2);color:#7e581f}.danger{background:var(--red2);color:#84433f}
+.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.btn{border:0;background:var(--green2);color:var(--green);font-weight:700;border-radius:10px;padding:8px 10px;font-size:12px;cursor:pointer}
+.btn.secondary{background:#f0f2f1;color:#59645f}.btn.danger{background:var(--red2);color:var(--red)}
+.choice{padding:10px 0;border-bottom:1px solid var(--line)}.choice:last-child{border:0}.choice b{font-size:13px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mini{padding:11px;border-radius:13px;background:#f7f9f8;font-size:12px;line-height:1.5}
+.hotel{padding:10px 0;border-bottom:1px solid var(--line)}.hotel:last-child{border:0}.hotel b{font-size:13px}.hotel .sub{margin-top:3px}
+.checkrow{display:flex;gap:9px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #edf0ee;font-size:13px}
+.checkrow:last-child{border:0}.checkrow input{margin-top:2px;accent-color:var(--green)}
+.checkrow.done .txt{text-decoration:line-through;color:#9aa39e}
+.item-actions{margin-left:auto;display:flex;gap:5px}.tiny{border:0;background:none;color:#87908c;padding:0 2px;cursor:pointer}
+.addrow{display:flex;gap:7px;margin-top:10px}.addrow input{min-width:0;flex:1;border:1px solid #dce3df;border-radius:10px;padding:9px;background:#fff}
+.progress{height:7px;background:#e8ece9;border-radius:99px;overflow:hidden;margin:8px 0}.progress>i{display:block;height:100%;background:var(--green);width:0}
+.route-map{padding:14px 4px 3px;overflow-x:auto;white-space:nowrap}
+.route-node{display:inline-flex;align-items:center;font-size:11px;color:#52605a}
+.route-node b{display:inline-flex;align-items:center;justify-content:center;background:var(--green2);color:var(--green);height:30px;padding:0 10px;border-radius:99px}
+.route-node:after{content:"→";margin:0 5px;color:#a3aaa6}.route-node:last-child:after{display:none}
+.food{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}.food:last-child{border:0}
+.footer{text-align:center;color:#9aa39e;font-size:10px;margin-top:25px;line-height:1.6}
+.sticky{position:sticky;bottom:10px;z-index:10;display:flex;justify-content:center;pointer-events:none}
+.sticky span{pointer-events:auto;background:rgba(26,43,36,.91);backdrop-filter:blur(10px);color:white;border-radius:999px;padding:9px 14px;font-size:11px;box-shadow:0 5px 18px rgba(0,0,0,.15)}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.hero h1{font-size:24px}}
+
+.mapbox{margin:10px 0 4px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#f8faf8}
+.mapbox svg{display:block;width:100%;height:auto}
+.mapcap{padding:8px 10px;border-top:1px solid var(--line);font-size:10px;color:var(--muted);line-height:1.45}
+.mland{fill:#edf2ee;stroke:#cfd9d2;stroke-width:1.4}
+.mroad{fill:none;stroke:#6e8e80;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.mroad.opt{stroke:#b6a477;stroke-dasharray:5 5}
+.mdot{fill:#315f50;stroke:white;stroke-width:2}
+.mdot.opt{fill:#b38a48}
+.mlabel{font-size:10px;fill:#33433c;font-weight:700}
+.msmall{font-size:8px;fill:#718078}
+.marrow{fill:#6e8e80}
+
+
+.maplegend{display:flex;gap:10px;flex-wrap:wrap;padding:8px 10px 0;font-size:9px;color:var(--muted)}
+.starttag{fill:#315f50}.starttext{font-size:8px;fill:white;font-weight:800}
+.mflight{fill:none;stroke:#728b9a;stroke-width:2.4;stroke-dasharray:6 5;stroke-linecap:round}
+.mdrive{fill:none;stroke:#557e6d;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.mopt{fill:none;stroke:#b39a63;stroke-width:2;stroke-dasharray:4 4}
+.mplane{font-size:16px;fill:#486a7b}
+.mhome{font-size:13px}
+.manchor{font-size:14px}
+.daystats{font-size:10px;color:#7a8580;font-weight:600}
+
+
+.nightstay{margin:11px 0 4px;padding:9px 11px;border-radius:12px;background:#eef4f1;color:#355b4e;font-size:12px;font-weight:750;line-height:1.45}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">NEW ZEALAND · V1.5</div>
+  <h1>新西兰旅行手册</h1>
+  <p>2027.02.03 — 02.15 · 4人同行 · 南岛自驾 + Auckland</p>
+  <div class="route">Christchurch → Tekapo → Aoraki / Mt Cook → Wānaka → Queenstown → Dunedin → Oamaru / Timaru → Christchurch ✈ Auckland</div>
+</header>
+
+<section class="section">
+  <div class="section-title">此刻关注 <small id="todayText"></small></div>
+  <div class="card focus" id="focusBox"></div>
+</section>
+
+<section class="section">
+ <div class="section-title">行程总览 <small>上海往返 · 南岛自驾 · Auckland</small></div>
+ <div class="card">
+  <div class="mapbox">
+   <svg viewBox="0 0 760 450" role="img" aria-label="新西兰完整旅行总览地图">
+    <defs>
+      <marker id="arrowDrive" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#557e6d"/></marker>
+      <marker id="arrowFlight" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#728b9a"/></marker>
+    </defs>
+    <rect width="760" height="450" fill="#f8faf8"/>
+    <!-- simplified NZ -->
+    <path class="mland" d="M168 328 C198 297 223 272 254 244 C288 213 316 180 354 153 C389 128 419 102 449 74 C464 61 481 66 486 81 C491 98 474 116 458 135 C432 166 402 195 373 224 C344 254 313 285 282 313 C251 341 220 367 187 384 C164 396 145 373 151 350 Z"/>
+    <path class="mland" d="M514 59 C535 40 562 38 582 51 C602 64 600 89 588 107 C577 126 579 143 598 154 C617 165 638 156 651 171 C664 185 655 204 638 213 C618 223 598 220 584 237 C570 254 567 278 549 291 C532 304 510 292 510 272 C509 248 525 230 530 209 C535 182 518 164 506 144 C493 123 490 97 498 78 Z"/>
+
+    <!-- Shanghai only: outbound and return -->
+    <rect x="18" y="93" width="105" height="38" rx="19" fill="#eef2f4"/>
+    <text x="70" y="117" text-anchor="middle" class="mlabel">上海 START / END</text>
+    <path class="mflight" marker-end="url(#arrowFlight)" d="M123 112 C190 126 275 160 365 206"/>
+    <text class="mplane" x="237" y="153">✈</text>
+
+    <!-- South Island drive -->
+    <path class="mdrive" marker-end="url(#arrowDrive)" d="M365 206 L310 235"/>
+    <path class="mdrive" marker-end="url(#arrowDrive)" d="M310 235 L271 275"/>
+    <path class="mdrive" marker-end="url(#arrowDrive)" d="M271 275 L235 305"/>
+    <path class="mdrive" marker-end="url(#arrowDrive)" d="M235 305 L204 339"/>
+    <path class="mdrive" marker-end="url(#arrowDrive)" d="M204 339 L250 330"/>
+    <path class="mdrive" marker-end="url(#arrowDrive)" d="M250 330 L307 290"/>
+    <path class="mdrive" marker-end="url(#arrowDrive)" d="M307 290 L365 206"/>
+
+    <!-- CHC -> AKL -->
+    <path class="mflight" marker-end="url(#arrowFlight)" d="M371 201 C432 149 493 103 553 78"/>
+    <text class="mplane" x="459" y="129">✈</text>
+
+    <!-- AKL -> Shanghai direct schematic -->
+    <path class="mflight" marker-end="url(#arrowFlight)" d="M553 72 C456 30 306 32 123 104"/>
+    <text class="mplane" x="352" y="49">✈</text>
+
+    <circle class="mdot" cx="365" cy="206" r="7"/><text class="mlabel" x="376" y="201">Christchurch</text>
+    <rect class="starttag" x="375" y="210" width="82" height="18" rx="9"/><text class="starttext" x="416" y="222" text-anchor="middle">★ 自驾起点</text>
+    <circle class="mdot" cx="310" cy="235" r="6"/><text class="mlabel" x="317" y="251">Tekapo / Mt Cook</text>
+    <circle class="mdot" cx="271" cy="275" r="6"/><text class="mlabel" x="278" y="271">Wānaka</text>
+    <circle class="mdot" cx="235" cy="305" r="6"/><text class="mlabel" x="165" y="302">Queenstown</text>
+    <circle class="mdot" cx="204" cy="339" r="6"/><text class="mlabel" x="151" y="357">Dunedin</text>
+    <circle class="mdot" cx="250" cy="330" r="6"/><text class="mlabel" x="258" y="346">Oamaru / Timaru</text>
+    <circle class="mdot" cx="553" cy="78" r="7"/><text class="mlabel" x="565" y="74">Auckland</text>
+    <text class="msmall" x="22" y="425">路线示意 · 非按比例 · 国际航班仅示意上海往返，不展开中转</text>
+   </svg>
+   <div class="maplegend"><span>★ 自驾起点</span><span>→ 自驾方向</span><span>✈ 航班</span><span>● 主要停留地</span><span>🏠 当晚住宿</span></div>
+   <div class="mapcap">上海 ✈ Christchurch → 南岛自驾环线 → Christchurch ✈ Auckland → 上海。香港中转不在总览展开。</div>
+  </div>
+ </div></section>
+
+<section class="section">
+ <div class="section-title">每日行程 <small>点开当天</small></div>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>03</b><span>FEB</span></div><div><div class="dayname">上海 → 香港 → Christchurch</div><div class="dayroute">国际航班 · 机上过夜</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mflight" d="M 48.0 69.0 L 340.0 88.0"/><path class="mflight" d="M 340.0 88.0 L 632.0 69.0"/><text class="mplane" x="194.0" y="71.5" text-anchor="middle">✈</text><text class="mplane" x="486.0" y="71.5" text-anchor="middle">✈</text><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">上海</text><circle class="mdot" cx="340.0" cy="88.0" r="6"/><text class="mlabel" x="340.0" y="116.0" text-anchor="middle">香港</text><circle class="mdot" cx="632.0" cy="69.0" r="6"/><text class="mlabel" x="632.0" y="53.0" text-anchor="middle">Christchurch</text><text class="mhome" x="642.0" y="65.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">国际航班日：上海 → 香港转机 → Christchurch。</div></div>
+  <ul class="timeline"><li><span class="time">12:50</span>CX317｜上海浦东 T2 → 香港 T1，15:50抵达</li><li><span class="time">20:40</span>CX119｜香港 T1 → Christchurch，次日12:50抵达</li></ul>
+ <div class="nightstay">🏠 今晚住宿｜CX119 航班上（机上过夜）</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>04</b><span>FEB</span></div><div><div class="dayname">Christchurch</div><div class="dayroute">落地 · 取车 · Citywalk · 大采购</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 632.0 88.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">CHC Airport</text><circle class="mdot" cx="632.0" cy="88.0" r="6"/><text class="mlabel" x="632.0" y="116.0" text-anchor="middle">Christchurch</text><text class="mhome" x="642.0" y="84.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">落地取车后进入 Christchurch；当晚住 Christchurch。</div></div>
+  <span class="pill p-confirm">主行程</span>
+  <ul class="timeline"><li><span class="time">12:50</span>抵达 Christchurch，入境 / 取行李</li><li><span class="time">13:30</span>Ezi Christchurch Airport 取车｜Toyota Prado 4WD or similar</li><li>入住 Huge Stylish Art Loft</li><li>Christchurch Citywalk + 南岛自驾第一次大采购</li></ul>
+  <div class="note">取车：所有驾驶员有效驾照原件；非英文驾照携带符合 NZTA 要求的英文翻译件 / IDP。主驾驶携带本人实体信用/借记卡；订单提示至少 NZD 400 预授权。</div>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=Christchurch+Airport" target="_blank">导航机场</a><a class="btn secondary" href="https://maps.apple.com/?q=394A+Colombo+Street+Christchurch" target="_blank">导航住宿</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Christchurch · Huge Stylish Art Loft</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>05</b><span>FEB</span></div><div><div class="dayname">Christchurch → Tekapo</div><div class="dayroute">约230 km / 3 h · Fairlie · Burkes Pass</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 242.7 88.0"/><path class="mopt" d="M 242.7 88.0 L 437.3 69.0"/><path class="mdrive" d="M 437.3 69.0 L 632.0 88.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Christchurch</text><circle class="mdot" cx="242.7" cy="88.0" r="6"/><text class="mlabel" x="242.7" y="116.0" text-anchor="middle">Fairlie</text><circle class="mdot opt" cx="437.3" cy="69.0" r="6"/><text class="mlabel" x="437.3" y="53.0" text-anchor="middle">Burkes Pass</text><circle class="mdot" cx="632.0" cy="88.0" r="6"/><text class="mlabel" x="632.0" y="116.0" text-anchor="middle">Tekapo</text><text class="mhome" x="642.0" y="84.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">Burkes Pass 为 Optional；终点 Tekapo 为当晚住宿。</div></div>
+  <ul class="timeline"><li>Christchurch → <b>Fairlie</b>｜午餐 / 咖啡 / 补给</li><li><span class="pill p-opt">Optional</span> Burkes Pass｜视时间停15–30分钟</li><li>抵达 Lake Tekapo → 好牧羊人教堂 → 湖边 / 日落</li><li><span class="pill p-want">想去</span> Tekapo观星 <span class="pill p-book">待订</span>｜2/5、2/6择天气更好的一晚</li></ul>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=Church+of+the+Good+Shepherd+Lake+Tekapo" target="_blank">好牧羊人教堂</a><a class="btn secondary" href="https://maps.apple.com/?q=Burkes+Pass+New+Zealand" target="_blank">Burkes Pass</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Lake Tekapo · Alpine Lodges</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>06</b><span>FEB</span></div><div><div class="dayname">Aoraki / Mt Cook 一日</div><div class="dayroute">Tekapo往返 · 4人可选不同方案</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 242.7 88.0"/><path class="mdrive" d="M 242.7 88.0 L 437.3 69.0"/><path class="mdrive" d="M 437.3 69.0 L 632.0 88.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Tekapo</text><circle class="mdot" cx="242.7" cy="88.0" r="6"/><text class="mlabel" x="242.7" y="116.0" text-anchor="middle">Lake Pukaki</text><circle class="mdot" cx="437.3" cy="69.0" r="6"/><text class="mlabel" x="437.3" y="53.0" text-anchor="middle">Mt Cook</text><text class="manchor" x="446.3" y="64.0">★</text><circle class="mdot" cx="632.0" cy="88.0" r="6"/><text class="mlabel" x="632.0" y="116.0" text-anchor="middle">Tekapo</text><text class="mhome" x="642.0" y="84.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">Tekapo往返 Mt Cook；活动分组后再确定集合逻辑。</div></div>
+  <span class="pill p-split">可分组选择</span>
+  <div class="choice"><b>A｜Hooker Valley Track</b><div class="sub">徒步为主。导航至 White Horse Hill Car Park。</div></div>
+  <div class="choice"><b>B｜Glacier Heli-Hike</b><div class="sub">冰川体验｜天气敏感｜待开放2027场次后选择。</div></div>
+  <div class="choice"><b>C｜Scenic Flight / Glacier Landing</b><div class="sub">飞行为主｜天气敏感｜集合逻辑待实际时段确定。</div></div>
+  <div class="choice"><span class="pill p-opt">Optional</span><b>Tasman Glacier View</b><div class="sub">导航只到 Tasman Valley 正式停车区域，停车后步行进入。</div></div>
+  <div class="note warn">Ezi：Tasman Valley Road 不要驶过允许的 picnic / parking 区域。活动分组时还要考虑4人只有一辆主车。</div>
+  <div class="food"><span>🍣 Mt Cook Alpine Salmon Shop</span><span class="pill p-want">想吃</span></div>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=White+Horse+Hill+Car+Park+New+Zealand" target="_blank">Hooker停车场</a><a class="btn secondary" href="https://maps.apple.com/?q=Tasman+Valley+Car+Park+New+Zealand" target="_blank">Tasman停车场</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Lake Tekapo · Alpine Lodges</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>07</b><span>FEB</span></div><div><div class="dayname">Tekapo → Wānaka</div><div class="dayroute">约200 km / 2.5–3 h · Pukaki · Lindis Pass</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 194.0 88.0"/><path class="mdrive" d="M 194.0 88.0 L 340.0 69.0"/><path class="mdrive" d="M 340.0 69.0 L 486.0 88.0"/><path class="mdrive" d="M 486.0 88.0 L 632.0 69.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Tekapo</text><circle class="mdot" cx="194.0" cy="88.0" r="6"/><text class="mlabel" x="194.0" y="116.0" text-anchor="middle">Pukaki</text><circle class="mdot" cx="340.0" cy="69.0" r="6"/><text class="mlabel" x="340.0" y="53.0" text-anchor="middle">Lindis Pass</text><circle class="mdot" cx="486.0" cy="88.0" r="6"/><text class="mlabel" x="486.0" y="116.0" text-anchor="middle">Hook Wānaka</text><circle class="mdot" cx="632.0" cy="69.0" r="6"/><text class="mlabel" x="632.0" y="53.0" text-anchor="middle">Wānaka</text><text class="mhome" x="642.0" y="65.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">Hook Wānaka 放在抵达 Wānaka 后；当晚住 Wānaka。</div></div>
+  <ul class="timeline"><li>Lake Pukaki → Lindis Pass → Wānaka</li><li><span class="pill p-want">想去</span><b>Hook Wānaka</b> <span class="pill p-book">待订</span>｜钓三文鱼 + 吃三文鱼；按当前营业规则周日合适，2027出发前复核</li><li>Wānaka湖边 → That Wānaka Tree → 小镇</li></ul>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=Hook+Wanaka" target="_blank">Hook Wānaka</a><a class="btn secondary" href="https://maps.apple.com/?q=That+Wanaka+Tree" target="_blank">Wānaka Tree</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Wānaka · Mishika Retreat and Lodge</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>08</b><span>FEB</span></div><div><div class="dayname">Wānaka → Queenstown</div><div class="dayroute">Real Guns · Cardrona · Arrowtown</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 194.0 88.0"/><path class="mdrive" d="M 194.0 88.0 L 340.0 69.0"/><path class="mdrive" d="M 340.0 69.0 L 486.0 88.0"/><path class="mdrive" d="M 486.0 88.0 L 632.0 69.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Wānaka</text><circle class="mdot" cx="194.0" cy="88.0" r="6"/><text class="mlabel" x="194.0" y="116.0" text-anchor="middle">Real Guns</text><text class="manchor" x="203.0" y="83.0">★</text><circle class="mdot" cx="340.0" cy="69.0" r="6"/><text class="mlabel" x="340.0" y="53.0" text-anchor="middle">Cardrona</text><circle class="mdot" cx="486.0" cy="88.0" r="6"/><text class="mlabel" x="486.0" y="116.0" text-anchor="middle">Arrowtown</text><circle class="mdot" cx="632.0" cy="69.0" r="6"/><text class="mlabel" x="632.0" y="53.0" text-anchor="middle">Queenstown</text><text class="mhome" x="642.0" y="65.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">Real Guns 为4人主活动；终点 Queenstown 为当晚住宿。</div></div>
+  <ul class="timeline"><li><span class="pill p-confirm">4人主活动</span><b>Real Guns New Zealand</b> <span class="pill p-book">待订</span>｜4人｜提前预约2/8时段</li><li>Cardrona → Crown Range</li><li><span class="pill p-confirm">确定想去</span><b>Arrowtown</b>｜留出逛镇时间</li><li>Queenstown入住</li><li><span class="pill p-want">想去</span> Skyline Queenstown + Luge <span class="pill p-book">待订</span>｜2/8–2/10择天气和回镇时间安排</li></ul>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=1081+Cardrona+Valley+Road+Wanaka" target="_blank">Real Guns</a><a class="btn secondary" href="https://maps.apple.com/?q=Arrowtown+New+Zealand" target="_blank">Arrowtown</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Queenstown · Platinum Queenstown Luxury Villas</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>09</b><span>FEB</span></div><div><div class="dayname">Deer Park → Glenorchy</div><div class="dayroute">特殊用车 · Bob's Cove Optional</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 194.0 88.0"/><path class="mdrive" d="M 194.0 88.0 L 340.0 69.0"/><path class="mopt" d="M 340.0 69.0 L 486.0 88.0"/><path class="mdrive" d="M 486.0 88.0 L 632.0 69.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Queenstown</text><circle class="mdot" cx="194.0" cy="88.0" r="6"/><text class="mlabel" x="194.0" y="116.0" text-anchor="middle">Deer Park</text><text class="manchor" x="203.0" y="83.0">★</text><circle class="mdot opt" cx="340.0" cy="69.0" r="6"/><text class="mlabel" x="340.0" y="53.0" text-anchor="middle">Bob's Cove</text><circle class="mdot" cx="486.0" cy="88.0" r="6"/><text class="mlabel" x="486.0" y="116.0" text-anchor="middle">Glenorchy</text><circle class="mdot" cx="632.0" cy="69.0" r="6"/><text class="mlabel" x="632.0" y="53.0" text-anchor="middle">Queenstown</text><text class="mhome" x="642.0" y="65.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">Deer Park 用第二辆允许进入的车；Bob's Cove Optional；晚上回 Queenstown。</div></div>
+  <ul class="timeline"><li><span class="pill p-want">想去</span><b>Deer Park Heights</b> <span class="pill p-book">待订</span>｜Ezi主车禁止进入，需另租明确允许进入的车辆</li><li><span class="pill p-opt">Optional</span> Bob's Cove｜视时间决定</li><li><span class="pill p-confirm">确定想去</span><b>Glenorchy</b>｜景观公路 + 湖边 + 小镇</li></ul>
+  <div class="note danger">Deer Park 不接受步行、Taxi/Uber或普通包车方式入园；租车游客拿到第二辆车的车牌 + make/model 后再购买门票。Ezi主车不要驶入。</div>
+  <div class="note warn">Ezi 对 Glenorchy / Paradise 一带有限制：不要把主车继续开过其允许边界；现场以最新租车条款为准。</div>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=Glenorchy+New+Zealand" target="_blank">Glenorchy</a><a class="btn secondary" href="https://maps.apple.com/?q=Bobs+Cove+Track+New+Zealand" target="_blank">Bob's Cove</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Queenstown · Platinum Queenstown Luxury Villas</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>10</b><span>FEB</span></div><div><div class="dayname">Queenstown机动日</div><div class="dayroute">Gibbston · Cromwell想去但低优先级</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 242.7 88.0"/><path class="mdrive" d="M 242.7 88.0 L 437.3 69.0"/><path class="mdrive" d="M 437.3 69.0 L 632.0 88.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Queenstown</text><circle class="mdot" cx="242.7" cy="88.0" r="6"/><text class="mlabel" x="242.7" y="116.0" text-anchor="middle">Gibbston</text><circle class="mdot opt" cx="437.3" cy="69.0" r="6"/><text class="mlabel" x="437.3" y="53.0" text-anchor="middle">Cromwell</text><circle class="mdot" cx="632.0" cy="88.0" r="6"/><text class="mlabel" x="632.0" y="116.0" text-anchor="middle">Queenstown</text><text class="mhome" x="642.0" y="84.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">Cromwell 为低优先级想去；本日保留机动功能。</div></div>
+  <ul class="timeline"><li><span class="pill p-split">可分组</span><b>Gibbston</b>｜酒庄 / 葡萄园 / Kawarau Gorge一带</li><li><span class="pill p-want">想去 · 低优先级</span><b>Cromwell</b>｜Old Cromwell / Lake Dunstan / 水果等；天气或补行程优先时可舍弃</li><li>如果2/9 Glenorchy因天气未完成，2/10优先补 Glenorchy</li></ul>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=Gibbston+New+Zealand" target="_blank">Gibbston</a><a class="btn secondary" href="https://maps.apple.com/?q=Old+Cromwell+Town" target="_blank">Old Cromwell</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Queenstown · Platinum Queenstown Luxury Villas</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>11</b><span>FEB</span></div><div><div class="dayname">Queenstown → Dunedin</div><div class="dayroute">约280 km / 3.5 h · Otago Peninsula · 晚上企鹅</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 164.8 88.0"/><path class="mdrive" d="M 164.8 88.0 L 281.6 69.0"/><path class="mdrive" d="M 281.6 69.0 L 398.4 88.0"/><path class="mdrive" d="M 398.4 88.0 L 515.2 69.0"/><path class="mdrive" d="M 515.2 69.0 L 632.0 88.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Queenstown</text><circle class="mdot" cx="164.8" cy="88.0" r="6"/><text class="mlabel" x="164.8" y="116.0" text-anchor="middle">Dunedin</text><circle class="mdot opt" cx="281.6" cy="69.0" r="6"/><text class="mlabel" x="281.6" y="53.0" text-anchor="middle">Larnach</text><circle class="mdot opt" cx="398.4" cy="88.0" r="6"/><text class="mlabel" x="398.4" y="116.0" text-anchor="middle">Sandfly Bay</text><circle class="mdot" cx="515.2" cy="69.0" r="6"/><text class="mlabel" x="515.2" y="53.0" text-anchor="middle">Taiaroa Head</text><text class="manchor" x="524.2" y="64.0">★</text><circle class="mdot" cx="632.0" cy="88.0" r="6"/><text class="mlabel" x="632.0" y="116.0" text-anchor="middle">Hereweka</text><text class="mhome" x="642.0" y="84.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">Larnach / Sandfly 可按时间取舍；★ Taiaroa Head 的 Blue Penguins 为当天时间锚点。</div></div>
+  <span class="pill p-confirm">时间锚点：Blue Penguins</span>
+  <div class="choice"><b>Larnach Castle</b><div class="sub">待4人决定｜约1.5–2h。</div></div>
+  <div class="choice"><b>Sandfly Bay</b><div class="sub">Optional｜可选仅 viewpoint / 完整下海滩 / 跳过。</div></div>
+  <div class="choice"><b>Royal Albatross</b><div class="sub">待4人决定｜与企鹅同处 Taiaroa Head 一带，组合效率较高。</div></div>
+  <div class="choice"><b>Blue Penguins Pukekura</b> <span class="pill p-book">待订</span><div class="sub">确定要去｜2027场次开放后订票；订好后向前倒推当天其他活动。</div></div>
+  <div class="note">晚上结束后直接回 13 Hereweka Street，住宿就在 Otago Peninsula，无需折返 Dunedin CBD。</div>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=Pukekura+Blue+Penguins+New+Zealand" target="_blank">企鹅</a><a class="btn secondary" href="https://maps.apple.com/?q=Sandfly+Bay+Carpark+New+Zealand" target="_blank">Sandfly停车点</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Dunedin / Otago Peninsula · Airbnb · 13 Hereweka Street</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>12</b><span>FEB</span></div><div><div class="dayname">Dunedin → Scarborough / Timaru</div><div class="dayroute">Moeraki · Kātiki Point · Oamaru</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 194.0 88.0"/><path class="mdrive" d="M 194.0 88.0 L 340.0 69.0"/><path class="mdrive" d="M 340.0 69.0 L 486.0 88.0"/><path class="mdrive" d="M 486.0 88.0 L 632.0 69.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Hereweka</text><circle class="mdot" cx="194.0" cy="88.0" r="6"/><text class="mlabel" x="194.0" y="116.0" text-anchor="middle">Moeraki</text><circle class="mdot" cx="340.0" cy="69.0" r="6"/><text class="mlabel" x="340.0" y="53.0" text-anchor="middle">Kātiki</text><circle class="mdot" cx="486.0" cy="88.0" r="6"/><text class="mlabel" x="486.0" y="116.0" text-anchor="middle">Oamaru</text><circle class="mdot" cx="632.0" cy="69.0" r="6"/><text class="mlabel" x="632.0" y="53.0" text-anchor="middle">Scarborough</text><text class="mhome" x="642.0" y="65.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">先 Kātiki 再 Oamaru；终点 Scarborough 为当晚住宿。</div></div>
+  <ul class="timeline"><li><span class="pill p-confirm">确定想去</span>Moeraki Boulders</li><li><span class="pill p-confirm">确定想去</span><b>Kātiki Point</b>｜按当前DOC信息17:30关闭，优先于Oamaru</li><li><span class="pill p-confirm">确定想去</span>Oamaru｜Victorian Precinct / Harbour / Steampunk一带</li><li><span class="pill p-opt">Optional</span> Oamaru Blue Penguin Colony白天参观</li><li>前往 Scarborough住宿</li></ul>
+  <div class="note warn">Kātiki Point：最后约4 km窄碎石路；到正式停车区域后步行。2027出发前再次复核 Ezi 最新道路限制与DOC开放状态。</div>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=Moeraki+Boulders+New+Zealand" target="_blank">Moeraki</a><a class="btn secondary" href="https://maps.apple.com/?q=Katiki+Point+Lighthouse+New+Zealand" target="_blank">Kātiki Point</a><a class="btn secondary" href="https://maps.apple.com/?q=Oamaru+Victorian+Precinct" target="_blank">Oamaru</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Scarborough · Airbnb · 51 Scarborough Road</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>13</b><span>FEB</span></div><div><div class="dayname">Timaru → Christchurch ✈ Auckland</div><div class="dayroute">还车 · NZ558 · 已订接机</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 242.7 88.0"/><path class="mflight" d="M 242.7 88.0 L 437.3 69.0"/><path class="mdrive" d="M 437.3 69.0 L 632.0 88.0"/><text class="mplane" x="340.0" y="71.5" text-anchor="middle">✈</text><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Timaru</text><circle class="mdot" cx="242.7" cy="88.0" r="6"/><text class="mlabel" x="242.7" y="116.0" text-anchor="middle">CHC Airport</text><circle class="mdot" cx="437.3" cy="69.0" r="6"/><text class="mlabel" x="437.3" y="53.0" text-anchor="middle">AKL Airport</text><circle class="mdot" cx="632.0" cy="88.0" r="6"/><text class="mlabel" x="632.0" y="116.0" text-anchor="middle">Four Points</text><text class="mhome" x="642.0" y="84.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">南岛还车 → ✈ Auckland → 已订接机到酒店。</div></div>
+  <ul class="timeline"><li><span class="pill p-opt">Optional</span> Caroline Bay</li><li>北上 Christchurch｜Ashburton可休息/补给；Rakaia Giant Salmon Optional</li><li>还车前加满油</li><li><span class="time">13:30</span>Ezi Christchurch Airport 还车</li><li><span class="time">16:15</span>NZ558 Christchurch → Auckland，17:40抵达</li><li><span class="time">17:30</span>已订7座接机｜4成人｜免费等待至19:00 → Four Points by Sheraton Auckland</li></ul>
+  <div class="note">接机 ¥511｜2/12 17:30前免费取消。公开版不保存乘车人电话、微信或完整订单号。</div>
+  <div class="actions"><a class="btn" href="https://maps.apple.com/?q=Christchurch+Airport" target="_blank">还车/机场</a><a class="btn secondary" href="https://maps.apple.com/?q=Four+Points+by+Sheraton+Auckland" target="_blank">Auckland酒店</a></div>
+ <div class="nightstay">🏠 今晚住宿｜Auckland · Four Points by Sheraton Auckland</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>14</b><span>FEB</span></div><div><div class="dayname">Auckland 完整一天</div><div class="dayroute">4人看方案后再决定</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 194.0 88.0"/><path class="mdrive" d="M 194.0 88.0 L 340.0 69.0"/><path class="mdrive" d="M 340.0 69.0 L 486.0 88.0"/><path class="mdrive" d="M 486.0 88.0 L 632.0 69.0"/><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Four Points</text><circle class="mdot" cx="194.0" cy="88.0" r="6"/><text class="mlabel" x="194.0" y="116.0" text-anchor="middle">CBD / Viaduct</text><circle class="mdot" cx="340.0" cy="69.0" r="6"/><text class="mlabel" x="340.0" y="53.0" text-anchor="middle">Devonport</text><circle class="mdot" cx="486.0" cy="88.0" r="6"/><text class="mlabel" x="486.0" y="116.0" text-anchor="middle">Mt Eden</text><circle class="mdot" cx="632.0" cy="69.0" r="6"/><text class="mlabel" x="632.0" y="53.0" text-anchor="middle">Four Points</text><text class="mhome" x="642.0" y="65.0">🏠</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">图示方案A；方案B / C仍保留供4人选择。</div></div>
+  <span class="pill p-split">方案选择</span>
+  <div class="choice"><b>A｜CBD + Devonport + Mt Eden</b><div class="sub">Britomart → Viaduct → Wynyard → Ferry → Devonport → Mount Victoria → Mt Eden。</div></div>
+  <div class="choice"><b>B｜纯 City Day</b><div class="sub">Queen Street → Art Gallery / Albert Park → Britomart → Viaduct → Wynyard → Mt Eden。</div></div>
+  <div class="choice"><b>C｜Waiheke Island</b><div class="sub">海岛 + 酒庄 + 海滩；暂不替4人做决定。</div></div>
+ <div class="nightstay">🏠 今晚住宿｜Auckland · Four Points by Sheraton Auckland</div>
+ </div></details>
+
+ <details><summary><div class="day-head"><div class="datebox"><b>15</b><span>FEB</span></div><div><div class="dayname">Auckland → 香港 → 上海</div><div class="dayroute">04:45已订送机 · 回国</div></div></div></summary><div class="details-body">
+  <div class="mapbox"><svg viewBox="0 0 680 178" role="img" aria-label="当日路线示意图"><rect width="680" height="178" fill="#f8faf8"/><path class="mdrive" d="M 48.0 69.0 L 242.7 88.0"/><path class="mflight" d="M 242.7 88.0 L 437.3 69.0"/><path class="mflight" d="M 437.3 69.0 L 632.0 88.0"/><text class="mplane" x="340.0" y="71.5" text-anchor="middle">✈</text><text class="mplane" x="534.7" y="71.5" text-anchor="middle">✈</text><circle class="mdot" cx="48.0" cy="69.0" r="6"/><text class="mlabel" x="48.0" y="53.0" text-anchor="middle">Four Points</text><circle class="mdot" cx="242.7" cy="88.0" r="6"/><text class="mlabel" x="242.7" y="116.0" text-anchor="middle">AKL Airport</text><circle class="mdot" cx="437.3" cy="69.0" r="6"/><text class="mlabel" x="437.3" y="53.0" text-anchor="middle">香港</text><circle class="mdot" cx="632.0" cy="88.0" r="6"/><text class="mlabel" x="632.0" y="116.0" text-anchor="middle">上海</text><text class="msmall" x="18" y="161">当日路线示意 · 非按比例</text></svg><div class="mapcap">04:45送机 → ✈ 香港转机 → ✈ 上海。</div></div>
+  <ul class="timeline"><li><span class="time">04:45</span>已订6座送机｜Four Points → Auckland Airport｜约21 km / 30min</li><li><span class="time">08:25</span>CX128 Auckland → 香港 T1，14:45抵达</li><li><span class="time">17:35</span>CX364 香港 T1 → 上海浦东 T2，20:20抵达</li></ul>
+  <div class="note">送机 ¥521｜2/15 00:45前免费取消。</div>
+ <div class="nightstay">🏠 今晚住宿｜无｜返程航班</div>
+ </div></details>
+</section>
+
+<section class="section">
+ <details>
+  <summary>🏨 订单钱包｜住宿</summary>
+  <div class="details-body">
+   <div class="hotel"><b>2/4–5｜Christchurch · Huge Stylish Art Loft</b> <span class="pill p-confirm">已订</span><div class="sub">394A Colombo Street｜两室一厅四卫｜无早餐｜NZD 405｜1/29前免费取消</div></div>
+   <div class="hotel"><b>2/5–7｜Lake Tekapo · Alpine Lodges</b> <span class="pill p-confirm">已订</span><div class="sub">48 D'archiac Drive｜湖景两卧一厅一卫｜无早餐｜NZD 2,173.50｜1/28前免费取消</div></div>
+   <div class="hotel"><b>2/7–8｜Wānaka · Mishika Retreat and Lodge</b> <span class="pill p-confirm">已订</span><div class="sub">28 Upton Street｜花园景/阳台｜无早餐｜¥1,388｜2/4 12:00前免费取消</div></div>
+   <div class="hotel"><b>2/8–11｜Queenstown · Platinum Queenstown Luxury Villas</b> <span class="pill p-confirm">已订</span><div class="sub">96 Fernhill Road｜湖景三卧别墅·两卫｜无早餐｜¥11,329｜1/25 19:00前免费取消</div></div>
+   <div class="hotel"><b>2/11–12｜Dunedin · Airbnb</b> <span class="pill p-confirm">已订</span><div class="sub">13 Hereweka Street｜当前订单锁定｜无早餐｜¥1,908.8｜1/28 15:00前免费取消</div></div>
+   <div class="hotel"><b>2/12–13｜Scarborough · Airbnb</b> <span class="pill p-confirm">已订</span><div class="sub">51 Scarborough Road｜两室一厅两卫｜无早餐｜¥2,069｜1/13 15:00前免费取消</div></div>
+   <div class="hotel"><b>2/13–15｜Auckland · Four Points by Sheraton Auckland</b> <span class="pill p-confirm">已订</span><div class="sub">396 Queen Street｜天空两卧套房·两室一厅两卫｜无早餐｜¥4,017｜2/12 19:00前免费取消</div></div>
+  </div>
+ </details>
+
+ <details>
+  <summary>🚗 订单钱包｜交通 / 出行</summary>
+  <div class="details-body">
+   <div class="hotel"><b>Ezi｜Toyota Prado 4WD or similar</b> <span class="pill p-confirm">已订</span><div class="sub">2/4 13:30 Christchurch Airport取车 → 2/13 13:30同址还车。主车禁止进入 Deer Park Heights。</div></div>
+   <div class="hotel"><b>2/13｜Auckland接机</b> <span class="pill p-confirm">已订</span><div class="sub">17:30开始｜舒适7座｜4成人｜免费等待1.5h至19:00｜¥511｜2/12 17:30前免费取消</div></div>
+   <div class="hotel"><b>2/15｜Auckland送机</b> <span class="pill p-confirm">已订</span><div class="sub">04:45｜酒店 → Auckland Airport｜6座｜¥521｜2/15 00:45前免费取消</div></div>
+  </div>
+ </details>
+
+ <details>
+  <summary>✈️ 订单钱包｜航班</summary>
+  <div class="details-body">
+   <div class="hotel"><b>2/3 CX317 + CX119</b> <span class="pill p-confirm">已订</span><div class="sub">上海浦东12:50 → 香港15:50｜香港20:40 → Christchurch次日12:50</div></div>
+   <div class="hotel"><b>2/13 NZ558</b> <span class="pill p-confirm">已订</span><div class="sub">Christchurch 16:15 → Auckland 17:40｜经济舱｜托运行李23kg/人 + 手提7kg/人</div></div>
+   <div class="hotel"><b>2/15 CX128 + CX364</b> <span class="pill p-confirm">已订</span><div class="sub">Auckland 08:25 → 香港14:45｜香港17:35 → 上海浦东20:20</div></div>
+  </div>
+ </details>
+</section>
+
+<section class="section">
+ <details>
+  <summary>🛒 沿途补给</summary>
+  <div class="details-body">
+   <div class="hotel"><b>Christchurch｜首选大采购</b><div class="sub">2/4取车后完成主要食品、饮用水和自驾用品采购。</div></div>
+   <div class="hotel"><b>Fairlie｜顺路补给</b><div class="sub">2/5午餐 / 咖啡 / 临时采购，不承担大采购。</div></div>
+   <div class="hotel"><b>Wānaka｜重要补货节点</b><div class="sub">住Queenstown前可补齐未来几天需要的食品和用品。</div></div>
+   <div class="hotel"><b>Queenstown｜随时补货</b><div class="sub">连续住3晚，不单独占用正式时间轴。</div></div>
+   <div class="hotel"><b>Cromwell｜仅去时顺便补</b><div class="sub">本身为低优先级“想去”，不为采购专程前往。</div></div>
+  </div>
+ </details>
+</section>
+
+<section class="section">
+ <details>
+  <summary>🍴 想吃｜非必须</summary>
+  <div class="details-body">
+   <div class="food"><span>Mt Cook Alpine Salmon Shop</span><span class="pill p-want">2/6顺路</span></div>
+   <div class="food"><span>Fergburger</span><span class="pill p-want">Queenstown</span></div>
+   <div class="food"><span>Flame Bar & Grill</span><span class="pill p-book">建议预订</span></div>
+   <div class="food"><span>Cookie Time Queenstown</span><span class="pill p-want">甜品/零食</span></div>
+  </div>
+ </details>
+</section>
+
+<section class="section">
+ <div class="section-title">待办清单 <small id="todoProgressText"></small></div>
+ <div class="card">
+  <div class="progress"><i id="todoProgress"></i></div>
+  <div id="todoList"></div>
+  <div class="addrow"><input id="todoInput" placeholder="新增待办…"><button class="btn" onclick="addTodo()">新增</button></div>
+ </div>
+</section>
+
+<section class="section">
+ <details>
+  <summary>🧳 行李清单 <span class="sub" id="packSummary"></span></summary>
+  <div class="details-body" id="packing"></div>
+ </details>
+</section>
+
+<section class="section">
+ <details>
+  <summary>🚘 自驾关键规则</summary>
+  <div class="details-body">
+   <div class="note danger"><b>Deer Park Heights：</b>Ezi主车禁止进入；另租明确允许进入的车辆。</div>
+   <div class="note"><b>Tasman Valley：</b>导航至正式停车区域，禁止继续驶入租车条款不允许的路段。</div>
+   <div class="note"><b>Glenorchy / Paradise：</b>不要将Ezi主车驶过租车公司允许边界。</div>
+   <div class="note"><b>Kātiki Point：</b>最后约4 km窄碎石路；2027出发前复核Ezi最新规则及DOC开放状态。</div>
+   <div class="note"><b>导航原则：</b>优先停车场 / Visitor Centre / Trailhead / 正式入口；不导航到模糊景点中心。</div>
+  </div>
+ </details>
+</section>
+
+<div class="footer">新西兰旅行手册 V1.5 · 公开版<br>不包含护照号、驾照号、完整订单编号、二维码、支付信息或私人联系方式。<br>2027年的营业时间、活动场次、天气、道路状态与租车限制需临近出发再次核实。</div>
+<div class="sticky"><span>V1.5 · 数据保存在本机浏览器</span></div>
+</div>
+
+<script>
+const tripStart=new Date('2027-02-03T00:00:00');
+const focusEvents=[
+ {d:'2027-01-13T15:00:00',lead:3,title:'Scarborough住宿取消期限',text:'1/13 15:00前确认是否保留。'},
+ {d:'2027-01-25T19:00:00',lead:3,title:'Queenstown住宿取消期限',text:'1/25 19:00前确认是否保留。'},
+ {d:'2027-01-28T15:00:00',lead:3,title:'Tekapo / Dunedin住宿取消节点',text:'Tekapo按1/28；Dunedin 1/28 15:00前确认。'},
+ {d:'2027-01-29T23:59:00',lead:3,title:'Christchurch住宿取消期限',text:'1/29前确认是否保留。'},
+ {d:'2027-02-04T12:00:00',lead:2,title:'Wānaka住宿取消期限',text:'2/4 12:00前确认是否保留。'},
+ {d:'2027-02-08T09:00:00',lead:10,title:'Real Guns｜4人预约',text:'确认2/8四人预约时段。'},
+ {d:'2027-02-09T09:00:00',lead:10,title:'Deer Park特殊用车',text:'提前订允许进入Deer Park的第二辆租车；取车拿到车牌后再处理门票。'},
+ {d:'2027-02-11T18:00:00',lead:14,title:'Blue Penguins订票',text:'2027场次开放后预订2/11晚场，并以企鹅时间倒推当天安排。'},
+ {d:'2027-02-12T17:30:00',lead:2,title:'Auckland接机取消期限',text:'2/12 17:30前可免费取消。'},
+ {d:'2027-02-12T19:00:00',lead:2,title:'Auckland住宿取消期限',text:'2/12 19:00前确认是否保留。'},
+ {d:'2027-02-15T00:45:00',lead:1,title:'Auckland送机取消期限',text:'2/15 00:45前可免费取消。'}
+];
+function renderFocus(){
+ const now=new Date(), box=document.getElementById('focusBox');
+ document.getElementById('todayText').textContent=now.toLocaleDateString('zh-CN');
+ let arr=focusEvents.filter(x=>{let d=new Date(x.d);return d>=now && (d-now)<=x.lead*86400000});
+ if(now<tripStart && (tripStart-now)<=14*86400000){
+   arr.push({d:'2027-02-03T00:00:00',title:'出发前检查',text:'4人确认入境许可/签证状态；每人完成NZTD；检查南岛天气、航班、驾照翻译文件、实体银行卡。'});
+ }
+ arr.sort((a,b)=>new Date(a.d)-new Date(b.d));
+ if(!arr.length){box.innerHTML='<div class="empty">当前没有进入提醒窗口的事项。临近取消期限、活动预约和出发日期时会自动出现。</div>';return}
+ box.innerHTML=arr.map(x=>`<div class="focus-item"><b>${x.title}</b><div class="sub">${x.text}</div></div>`).join('');
+}
+
+const defaultTodos=[
+ '确认4人各自的新西兰入境许可 / 签证状态',
+ 'Real Guns｜预约2/8四人时段',
+ 'Blue Penguins Pukekura｜2027场次开放后预订2/11晚场',
+ 'Deer Park｜预订2/9允许进入园区的第二辆租车',
+ 'Deer Park｜取第二辆车后用车牌 + make/model购买当日门票',
+ 'Mt Cook｜临近2/6确认天气及4人各自活动方案',
+ 'Tekapo观星｜临近日期按天气决定2/5或2/6',
+ '出发前复核 Ezi 最新道路限制：Kātiki / Tasman / Glenorchy',
+ '出发前24小时窗口内完成4人的 NZTD'
+];
+let todos=JSON.parse(localStorage.getItem('nz_v1_todos')||'null')||defaultTodos.map((t,i)=>({id:Date.now()+i,text:t,done:false}));
+function saveTodos(){localStorage.setItem('nz_v1_todos',JSON.stringify(todos))}
+function renderTodos(){
+ const el=document.getElementById('todoList');
+ el.innerHTML=todos.map(t=>`<div class="checkrow ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTodo(${t.id})"><span class="txt">${esc(t.text)}</span><span class="item-actions"><button class="tiny" onclick="editTodo(${t.id})">✎</button><button class="tiny" onclick="delTodo(${t.id})">×</button></span></div>`).join('');
+ const done=todos.filter(x=>x.done).length, pct=todos.length?done/todos.length*100:0;
+ document.getElementById('todoProgress').style.width=pct+'%';
+ document.getElementById('todoProgressText').textContent=`${done}/${todos.length}`;
+}
+function addTodo(){let i=document.getElementById('todoInput');if(!i.value.trim())return;todos.push({id:Date.now(),text:i.value.trim(),done:false});i.value='';saveTodos();renderTodos()}
+function toggleTodo(id){let t=todos.find(x=>x.id===id);t.done=!t.done;saveTodos();renderTodos()}
+function delTodo(id){todos=todos.filter(x=>x.id!==id);saveTodos();renderTodos()}
+function editTodo(id){let t=todos.find(x=>x.id===id),v=prompt('编辑待办',t.text);if(v&&v.trim()){t.text=v.trim();saveTodos();renderTodos()}}
+function esc(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+
+const packDefaults={
+ '证件 / 文件':['护照','每人入境许可 / 签证相关材料','NZTD完成确认','中国驾照原件','符合NZTA要求的英文翻译件 / IDP','旅行保险资料','主驾驶本人实体银行卡'],
+ '衣物':['防水外套','保暖层','日常换洗衣物','适合步行的鞋','帽子'],
+ '电子设备':['手机','充电器','充电宝','车充 / USB线','新西兰转换插头','离线地图'],
+ '户外 / 自驾':['防晒霜','太阳镜','饮水瓶','小背包'],
+ '洗护 / 其他':['常用洗护用品','个人常用物品']
+};
+let packing=JSON.parse(localStorage.getItem('nz_v1_pack')||'null');
+if(!packing){packing={};Object.entries(packDefaults).forEach(([c,items])=>packing[c]=items.map((x,i)=>({id:Date.now()+Math.random(),text:x,done:false})))}
+function savePack(){localStorage.setItem('nz_v1_pack',JSON.stringify(packing))}
+function renderPack(){
+ let root=document.getElementById('packing'),all=0,done=0;
+ root.innerHTML=Object.entries(packing).map(([cat,items])=>{
+  let d=items.filter(x=>x.done).length;all+=items.length;done+=d;
+  return `<details><summary>${cat}<span class="sub">${d}/${items.length}</span></summary><div class="details-body">
+   ${items.map(t=>`<div class="checkrow ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} onchange="togglePack('${cat}',${t.id})"><span class="txt">${esc(t.text)}</span><span class="item-actions"><button class="tiny" onclick="editPack('${cat}',${t.id})">✎</button><button class="tiny" onclick="delPack('${cat}',${t.id})">×</button></span></div>`).join('')}
+   <div class="addrow"><input id="add_${hash(cat)}" placeholder="新增${cat}…"><button class="btn" onclick="addPack('${cat}')">新增</button></div></div></details>`;
+ }).join('');
+ document.getElementById('packSummary').textContent=`${done}/${all}`;
+}
+function hash(s){return [...s].reduce((a,c)=>a+c.charCodeAt(0),0)}
+function togglePack(c,id){let t=packing[c].find(x=>x.id===id);t.done=!t.done;savePack();renderPack()}
+function delPack(c,id){packing[c]=packing[c].filter(x=>x.id!==id);savePack();renderPack()}
+function editPack(c,id){let t=packing[c].find(x=>x.id===id),v=prompt('编辑行李项',t.text);if(v&&v.trim()){t.text=v.trim();savePack();renderPack()}}
+function addPack(c){let i=document.getElementById('add_'+hash(c));if(!i.value.trim())return;packing[c].push({id:Date.now()+Math.random(),text:i.value.trim(),done:false});savePack();renderPack()}
+
+renderFocus();renderTodos();renderPack();
+</script>
+</body></html>
