@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f4f6f3">
-<title>新西兰旅行手册 V1.5｜2027.02.03–02.15</title>
+<title>新西兰旅行手册 V1.8.1｜2027.02.03–02.15</title>
 <style>
 :root{
   --bg:#f4f6f3;--card:#fff;--ink:#18211d;--muted:#6d7771;--line:#e4e9e5;
@@ -102,23 +102,43 @@ details[open]>summary:after{transform:rotate(180deg)}
 
 .nightstay{margin:11px 0 4px;padding:9px 11px;border-radius:12px;background:#eef4f1;color:#355b4e;font-size:12px;font-weight:750;line-height:1.45}
 
-</style>
+
+.quicknav{display:flex;gap:7px;overflow-x:auto;padding:1px 1px 10px;scrollbar-width:none}
+.quicknav::-webkit-scrollbar{display:none}.quicknav a{flex:0 0 auto;padding:7px 11px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:750;color:#52605a;box-shadow:0 3px 12px rgba(35,55,45,.04)}
+.countdown{padding:13px 14px;margin-bottom:10px;border-radius:15px;background:linear-gradient(135deg,#e9f2ee,#f7faf8)}
+.countdown .big{font-size:21px;font-weight:850;color:#285346;letter-spacing:-.02em}
+.countdown .sub{margin-top:3px}
+.flight-slider{position:relative}.flight-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;scrollbar-width:none;padding:2px 1px 8px}.flight-track::-webkit-scrollbar{display:none}
+.flight-slide{scroll-snap-align:start;flex:0 0 94%;border:1px solid var(--line);border-radius:15px;padding:13px;background:#fafcfb}
+.flight-top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:10px}.flight-title{font-weight:800;font-size:13px}
+.flight-leg{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin:8px 0}.airport b{display:block;font-size:18px}.airport span{font-size:10px;color:var(--muted)}
+.flight-mid{text-align:center;font-size:10px;color:var(--muted)}.flight-mid b{display:block;font-size:14px;color:#547263}
+.flight-dots{text-align:center;font-size:10px;color:#a2aaa6}.flight-dots b{color:var(--green);font-size:13px}
+:target{scroll-margin-top:10px}
+
+.flight-segment{padding:10px 0;border-top:1px solid var(--line)}.flight-segment:first-of-type{border-top:0}.seghead{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}.flightno{font-size:10px;color:var(--muted);font-weight:750}.segtime{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:9px}.timepoint b{display:block;font-size:21px;color:#294f43}.timepoint span{display:block;margin-top:4px;font-size:10px;color:var(--muted)}.timepoint.arr{text-align:right}.routearrow{text-align:center}.transfer{margin:8px 0;padding:6px 9px;border-radius:999px;background:#eef3f1;text-align:center;font-size:10px;font-weight:750;color:#60726a}</style>
 </head>
 <body>
 <div class="wrap">
 <header class="hero">
-  <div class="kicker">NEW ZEALAND · V1.5</div>
+  <div class="kicker">NEW ZEALAND · V1.8.1</div>
   <h1>新西兰旅行手册</h1>
   <p>2027.02.03 — 02.15 · 4人同行 · 南岛自驾 + Auckland</p>
   <div class="route">Christchurch → Tekapo → Aoraki / Mt Cook → Wānaka → Queenstown → Dunedin → Oamaru / Timaru → Christchurch ✈ Auckland</div>
 </header>
+<nav class="quicknav" aria-label="页面快捷导航">
+ <a href="#focus">此刻关注</a><a href="#overview">总览</a><a href="#flights">航班</a><a href="#daily">每日行程</a><a href="#orders">订单</a><a href="#todos">待办</a><a href="#packing-section">行李</a>
+</nav>
 
-<section class="section">
+<section class="section" id="focus">
   <div class="section-title">此刻关注 <small id="todayText"></small></div>
-  <div class="card focus" id="focusBox"></div>
+  <div class="card focus">
+ <div class="countdown" id="countdownBox"></div>
+ <div id="focusBox"></div>
+</div>
 </section>
 
-<section class="section">
+<section class="section" id="overview">
  <div class="section-title">行程总览 <small>上海往返 · 南岛自驾 · Auckland</small></div>
  <div class="card">
   <div class="mapbox">
@@ -170,7 +190,24 @@ details[open]>summary:after{transform:rotate(180deg)}
   </div>
  </div></section>
 
-<section class="section">
+<section class="section" id="flights">
+ <div class="section-title">航班 <small>左右滑动查看 3 段行程</small></div>
+ <div class="card">
+  <div class="flight-slider"><div class="flight-track" id="flightTrack">
+<div class="flight-slide"><div class="flight-top"><div class="flight-title">去程｜2/3–2/4</div><span class="pill p-confirm">已订</span></div>
+<div class="flight-segment"><div class="seghead"><b>上海 → 香港</b><span class="flightno">CX317</span></div><div class="segtime"><div class="timepoint"><b>12:50</b><span>2/3 · PVG 上海浦东 T2｜起飞</span></div><div class="routearrow">✈</div><div class="timepoint arr"><b>15:50</b><span>2/3 · HKG 香港｜抵达</span></div></div></div>
+<div class="transfer">香港转机 · 4小时50分</div>
+<div class="flight-segment"><div class="seghead"><b>香港 → Christchurch</b><span class="flightno">CX119</span></div><div class="segtime"><div class="timepoint"><b>20:40</b><span>2/3 · HKG 香港｜起飞</span></div><div class="routearrow">✈</div><div class="timepoint arr"><b>12:50</b><span>2/4 · CHC Christchurch｜抵达</span></div></div></div></div>
+<div class="flight-slide"><div class="flight-top"><div class="flight-title">南岛 → 北岛｜2/13</div><span class="pill p-confirm">已订</span></div><div class="flight-segment"><div class="seghead"><b>Christchurch → Auckland</b><span class="flightno">NZ558</span></div><div class="segtime"><div class="timepoint"><b>16:15</b><span>2/13 · CHC｜起飞</span></div><div class="routearrow">✈</div><div class="timepoint arr"><b>17:40</b><span>2/13 · AKL｜抵达</span></div></div></div><div class="sub">托运行李 23kg/人 + 手提 7kg/人</div></div>
+<div class="flight-slide"><div class="flight-top"><div class="flight-title">返程｜2/15</div><span class="pill p-confirm">已订</span></div>
+<div class="flight-segment"><div class="seghead"><b>Auckland → 香港</b><span class="flightno">CX128</span></div><div class="segtime"><div class="timepoint"><b>08:25</b><span>2/15 · AKL｜起飞</span></div><div class="routearrow">✈</div><div class="timepoint arr"><b>14:45</b><span>2/15 · HKG 香港｜抵达</span></div></div></div>
+<div class="transfer">香港转机 · 2小时50分</div>
+<div class="flight-segment"><div class="seghead"><b>香港 → 上海</b><span class="flightno">CX364</span></div><div class="segtime"><div class="timepoint"><b>17:35</b><span>2/15 · HKG 香港｜起飞</span></div><div class="routearrow">✈</div><div class="timepoint arr"><b>20:20</b><span>2/15 · PVG 上海浦东｜抵达</span></div></div></div></div>
+</div><div class="flight-dots" id="flightDots"><b>●</b>　●　●　<span class="sub">左右滑动</span></div></div>
+ </div>
+</section>
+
+<section class="section" id="daily">
  <div class="section-title">每日行程 <small>点开当天</small></div>
 
  <details><summary><div class="day-head"><div class="datebox"><b>03</b><span>FEB</span></div><div><div class="dayname">上海 → 香港 → Christchurch</div><div class="dayroute">国际航班 · 机上过夜</div></div></div></summary><div class="details-body">
@@ -283,38 +320,7 @@ details[open]>summary:after{transform:rotate(180deg)}
  </div></details>
 </section>
 
-<section class="section">
- <details>
-  <summary>🏨 订单钱包｜住宿</summary>
-  <div class="details-body">
-   <div class="hotel"><b>2/4–5｜Christchurch · Huge Stylish Art Loft</b> <span class="pill p-confirm">已订</span><div class="sub">394A Colombo Street｜两室一厅四卫｜无早餐｜NZD 405｜1/29前免费取消</div></div>
-   <div class="hotel"><b>2/5–7｜Lake Tekapo · Alpine Lodges</b> <span class="pill p-confirm">已订</span><div class="sub">48 D'archiac Drive｜湖景两卧一厅一卫｜无早餐｜NZD 2,173.50｜1/28前免费取消</div></div>
-   <div class="hotel"><b>2/7–8｜Wānaka · Mishika Retreat and Lodge</b> <span class="pill p-confirm">已订</span><div class="sub">28 Upton Street｜花园景/阳台｜无早餐｜¥1,388｜2/4 12:00前免费取消</div></div>
-   <div class="hotel"><b>2/8–11｜Queenstown · Platinum Queenstown Luxury Villas</b> <span class="pill p-confirm">已订</span><div class="sub">96 Fernhill Road｜湖景三卧别墅·两卫｜无早餐｜¥11,329｜1/25 19:00前免费取消</div></div>
-   <div class="hotel"><b>2/11–12｜Dunedin · Airbnb</b> <span class="pill p-confirm">已订</span><div class="sub">13 Hereweka Street｜当前订单锁定｜无早餐｜¥1,908.8｜1/28 15:00前免费取消</div></div>
-   <div class="hotel"><b>2/12–13｜Scarborough · Airbnb</b> <span class="pill p-confirm">已订</span><div class="sub">51 Scarborough Road｜两室一厅两卫｜无早餐｜¥2,069｜1/13 15:00前免费取消</div></div>
-   <div class="hotel"><b>2/13–15｜Auckland · Four Points by Sheraton Auckland</b> <span class="pill p-confirm">已订</span><div class="sub">396 Queen Street｜天空两卧套房·两室一厅两卫｜无早餐｜¥4,017｜2/12 19:00前免费取消</div></div>
-  </div>
- </details>
 
- <details>
-  <summary>🚗 订单钱包｜交通 / 出行</summary>
-  <div class="details-body">
-   <div class="hotel"><b>Ezi｜Toyota Prado 4WD or similar</b> <span class="pill p-confirm">已订</span><div class="sub">2/4 13:30 Christchurch Airport取车 → 2/13 13:30同址还车。主车禁止进入 Deer Park Heights。</div></div>
-   <div class="hotel"><b>2/13｜Auckland接机</b> <span class="pill p-confirm">已订</span><div class="sub">17:30开始｜舒适7座｜4成人｜免费等待1.5h至19:00｜¥511｜2/12 17:30前免费取消</div></div>
-   <div class="hotel"><b>2/15｜Auckland送机</b> <span class="pill p-confirm">已订</span><div class="sub">04:45｜酒店 → Auckland Airport｜6座｜¥521｜2/15 00:45前免费取消</div></div>
-  </div>
- </details>
-
- <details>
-  <summary>✈️ 订单钱包｜航班</summary>
-  <div class="details-body">
-   <div class="hotel"><b>2/3 CX317 + CX119</b> <span class="pill p-confirm">已订</span><div class="sub">上海浦东12:50 → 香港15:50｜香港20:40 → Christchurch次日12:50</div></div>
-   <div class="hotel"><b>2/13 NZ558</b> <span class="pill p-confirm">已订</span><div class="sub">Christchurch 16:15 → Auckland 17:40｜经济舱｜托运行李23kg/人 + 手提7kg/人</div></div>
-   <div class="hotel"><b>2/15 CX128 + CX364</b> <span class="pill p-confirm">已订</span><div class="sub">Auckland 08:25 → 香港14:45｜香港17:35 → 上海浦东20:20</div></div>
-  </div>
- </details>
-</section>
 
 <section class="section">
  <details>
@@ -341,7 +347,7 @@ details[open]>summary:after{transform:rotate(180deg)}
  </details>
 </section>
 
-<section class="section">
+<section class="section" id="todos">
  <div class="section-title">待办清单 <small id="todoProgressText"></small></div>
  <div class="card">
   <div class="progress"><i id="todoProgress"></i></div>
@@ -350,7 +356,7 @@ details[open]>summary:after{transform:rotate(180deg)}
  </div>
 </section>
 
-<section class="section">
+<section class="section" id="packing-section">
  <details>
   <summary>🧳 行李清单 <span class="sub" id="packSummary"></span></summary>
   <div class="details-body" id="packing"></div>
@@ -370,8 +376,8 @@ details[open]>summary:after{transform:rotate(180deg)}
  </details>
 </section>
 
-<div class="footer">新西兰旅行手册 V1.5 · 公开版<br>不包含护照号、驾照号、完整订单编号、二维码、支付信息或私人联系方式。<br>2027年的营业时间、活动场次、天气、道路状态与租车限制需临近出发再次核实。</div>
-<div class="sticky"><span>V1.5 · 数据保存在本机浏览器</span></div>
+<div class="footer">新西兰旅行手册 V1.8.1 · 公开版<br>不包含护照号、驾照号、完整订单编号、二维码、支付信息或私人联系方式。<br>2027年的营业时间、活动场次、天气、道路状态与租车限制需临近出发再次核实。</div>
+<div class="sticky"><span>V1.8.1 · 数据保存在本机浏览器</span></div>
 </div>
 
 <script>
@@ -453,6 +459,33 @@ function delPack(c,id){packing[c]=packing[c].filter(x=>x.id!==id);savePack();ren
 function editPack(c,id){let t=packing[c].find(x=>x.id===id),v=prompt('编辑行李项',t.text);if(v&&v.trim()){t.text=v.trim();savePack();renderPack()}}
 function addPack(c){let i=document.getElementById('add_'+hash(c));if(!i.value.trim())return;packing[c].push({id:Date.now()+Math.random(),text:i.value.trim(),done:false});savePack();renderPack()}
 
-renderFocus();renderTodos();renderPack();
+
+function renderCountdown(){
+ const box=document.getElementById('countdownBox'); if(!box)return;
+ const now=new Date();
+ const depart=new Date('2027-02-03T12:50:00+08:00');
+ const tripEnd=new Date('2027-02-15T20:20:00+08:00');
+ const diff=depart-now;
+ if(diff>0){
+   const mins=Math.floor(diff/60000), hrs=Math.floor(mins/60), days=Math.floor(hrs/24);
+   let main='';
+   if(days>7) main=`距离出发还有 ${days} 天`;
+   else if(hrs>24) main=`距离出发还有 ${days} 天 ${hrs%24} 小时`;
+   else main=`距离出发还有 ${hrs} 小时 ${mins%60} 分钟`;
+   box.innerHTML=`<div class="big">🇳🇿 ${main}</div><div class="sub">✈ CX317｜2027/2/3 12:50｜上海浦东 T2 出发</div>`;
+ }else if(now<=tripEnd){
+   const startDay=new Date('2027-02-03T00:00:00+08:00');
+   const day=Math.floor((now-startDay)/86400000)+1;
+   box.innerHTML=`<div class="big">🇳🇿 Day ${Math.max(1,Math.min(13,day))}｜旅行进行中</div><div class="sub">打开「每日行程」查看今天的路线、住宿与提醒。</div>`;
+ }else{
+   box.innerHTML=`<div class="big">新西兰之旅已结束</div><div class="sub">2027/2/3 — 2/15</div>`;
+ }
+}
+function setupFlightDots(){
+ const track=document.getElementById('flightTrack'),dots=document.getElementById('flightDots'); if(!track||!dots)return;
+ track.addEventListener('scroll',()=>{let i=Math.round(track.scrollLeft/(track.clientWidth*.94));i=Math.max(0,Math.min(2,i));dots.innerHTML=[0,1,2].map(x=>x===i?'<b>●</b>':'●').join('　')+'　<span class="sub">左右滑动</span>';});
+}
+
+renderCountdown();renderFocus();renderTodos();renderPack();setupFlightDots();
 </script>
 </body></html>
