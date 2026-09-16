@@ -1,0 +1,7 @@
+*.private.html
+*private*
+*二维码*
+*QR*
+.DS_Store
+work/
+outputs/
